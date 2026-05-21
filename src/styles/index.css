@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+/* CSS Custom Properties Registration for Cinematic Transitions */
+@property --color-primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #00f0ff;
+}
+@property --color-secondary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #0066ff;
+}
+@property --color-accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ff003c;
+}
+@property --color-card-bg {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(13, 20, 35, 0.45);
+}
+@property --color-card-light-bg {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(20, 30, 50, 0.65);
+}
+@property --bg-color-1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #0a1424;
+}
+@property --bg-color-2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #030508;
+}
+
+/* Global Operative Protocols (CSS Variables) */
+:root, .theme-blue {
+  --color-primary: #00f0ff;          /* Holographic Cyan */
+  --color-primary-rgb: 0, 240, 255;
+  --color-secondary: #0066ff;        /* Assistant Power Blue */
+  --color-accent: #ff003c;           /* Threat Warning Red */
+  --color-card-bg: rgba(13, 20, 35, 0.45);
+  --color-card-light-bg: rgba(20, 30, 50, 0.65);
+  --bg-color-1: #0a1424;
+  --bg-color-2: #030508;
+  --glow-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+  --glow-shadow-lg: 0 0 25px rgba(0, 240, 255, 0.6);
+  --glow-shadow-inset: inset 0 0 15px rgba(0, 240, 255, 0.15);
+  --pulse-speed: 3.5s;
+  --scanline-speed: 12s;
+  --scanner-speed: 7s;
+  transition: --color-primary 0.8s ease, --color-secondary 0.8s ease, --color-accent 0.8s ease, --color-card-bg 0.8s ease, --color-card-light-bg 0.8s ease, --bg-color-1 0.8s ease, --bg-color-2 0.8s ease;
+}
+
+.theme-red {
+  --color-primary: #ff003c;          /* Chitti Warning Crimson Red */
+  --color-primary-rgb: 255, 0, 60;
+  --color-secondary: #ff5500;        /* Alert Amber/Orange */
+  --color-accent: #00f0ff;           /* Auxiliary Cyan */
+  --color-card-bg: rgba(6, 2, 3, 0.75); /* Darker, hostile metallic black */
+  --color-card-light-bg: rgba(18, 5, 8, 0.85);
+  --bg-color-1: #1a0208;
+  --bg-color-2: #040102;
+  --glow-shadow: 0 0 15px rgba(255, 0, 60, 0.45);
+  --glow-shadow-lg: 0 0 25px rgba(255, 0, 60, 0.7);
+  --glow-shadow-inset: inset 0 0 15px rgba(255, 0, 60, 0.18);
+  --pulse-speed: 1.5s; /* Aggressive faster pacing */
+  --scanline-speed: 5s;
+  --scanner-speed: 3.0s;
+}
+
+@layer base {
+  body {
+    @apply text-slate-100 font-inter antialiased overflow-x-hidden selection:bg-brand-cyan/30 selection:text-brand-cyan;
+    background: radial-gradient(circle at 50% 10%, var(--bg-color-1) 0%, var(--bg-color-2) 85%);
+    transition: background 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                --bg-color-1 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                --bg-color-2 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Custom Tech Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030508;
+    border-left: 1px solid rgba(var(--color-primary-rgb), 0.1);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(var(--color-primary-rgb), 0.25);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.45);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(var(--color-primary-rgb), 0.2);
+    transition: background 0.3s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--color-primary-rgb), 0.5);
+  }
+}
+
+@layer utilities {
+  /* Hologram Glassmorphism Cards */
+  .hologram-card {
+    background: var(--color-card-bg);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+    box-shadow: var(--glow-shadow);
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
+    transition: background 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .hologram-card-hover {
+    @apply hover:bg-brand-cardLight;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  .hologram-card-hover:hover {
+    border-color: rgba(var(--color-primary-rgb), 0.55);
+    box-shadow: var(--glow-shadow-lg);
+  }
+
+  /* Glowing Text styles */
+  .text-glow-cyan, .text-glow-primary {
+    text-shadow: 0 0 8px rgba(var(--color-primary-rgb), 0.65), 0 0 16px rgba(var(--color-primary-rgb), 0.25);
+    transition: text-shadow 0.5s ease;
+  }
+
+  /* Cyber Scanlines */
+  .scanline-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(var(--color-primary-rgb), 0.045) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.35;
+    transition: background 0.8s ease;
+  }
+
+  .scanline-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(var(--color-primary-rgb), 0.03) 10%,
+      rgba(var(--color-primary-rgb), 0.12) 50%,
+      rgba(var(--color-primary-rgb), 0.03) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 9998;
+    pointer-events: none;
+    animation: scanline var(--scanline-speed, 12s) linear infinite;
+    will-change: transform;
+  }
+
+  /* Hologram Static Noise */
+  .holo-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.012;
+    pointer-events: none;
+  }
+}
+
+/* Digital Grid Background */
+.tech-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(var(--color-primary-rgb), 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--color-primary-rgb), 0.03) 1px, transparent 1px);
+  transition: background-image 0.8s ease;
+}
+
+.tech-dot-bg {
+  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(var(--color-primary-rgb), 0.12) 1px, transparent 1px);
+  transition: background-image 0.8s ease;
+}
+
+/* AI Scanner Horizontal Scan Beam */
+@keyframes horizontal-scan {
+  0% {
+    left: -1%;
+    opacity: 0.15;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    left: 101%;
+    opacity: 0.15;
+  }
+}
+
+.ai-scanner-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, transparent 5%, var(--color-primary) 50%, transparent 95%);
+  box-shadow: 0 0 12px var(--color-primary), 0 0 4px var(--color-primary);
+  animation: horizontal-scan var(--scanner-speed, 7s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+  z-index: 5;
+  will-change: left;
+  transform: translateZ(0);
+}
+
+/* Subroutines formatting */
+.hud-font {
+  font-family: "Share Tech Mono", "Courier New", Courier, monospace;
+}
+
+/* Cinematic Glitch Flash effect on theme change */
+@keyframes cyber-glitch {
+  0% {
+    opacity: 0.9;
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    opacity: 0.4;
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    opacity: 0.7;
+    clip-path: inset(15% 0 80% 0);
+  }
+  60% {
+    opacity: 0.5;
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    opacity: 0.8;
+    clip-path: inset(3% 0 92% 0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cyber-glitch-flash {
+  position: fixed;
+  inset: 0;
+  background: rgba(var(--color-primary-rgb), 0.18);
+  box-shadow: inset 0 0 80px rgba(var(--color-primary-rgb), 0.3);
+  z-index: 99999;
+  pointer-events: none;
+  animation: cyber-glitch 0.45s steps(2, end) forwards;
+}
