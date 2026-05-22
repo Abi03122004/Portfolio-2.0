@@ -12,7 +12,7 @@ const SKILL_CATEGORIES = [
     skills: [
       { name: "Python", level: 82 },
       { name: "JavaScript", level: 50, status: "Learning" },
-      { name: "C", level: 65 }
+      { name: "C", level: 55 }
     ]
   },
   {
@@ -21,8 +21,8 @@ const SKILL_CATEGORIES = [
     icon: <FiLayers className="transition-colors duration-500" />,
     skills: [
       { name: "HTML5", level: 85 },
-      { name: "CSS3", level: 78 },
-      { name: "React", level: 75 }
+      { name: "CSS", level: 78 },
+      { name: "React", level: 65 }
     ]
   },
   {

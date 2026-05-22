@@ -9,24 +9,19 @@ export default function BootLoader({ onBootComplete }) {
   const [fastSkip, setFastSkip] = useState(false);
 
   const bootLogs = [
-    "SYS_BOOT: INITIATING COLD RESTART...",
-    "ABINESH OS INITIALIZING...",
-    "ACCESS_LEVEL: CHITTI_CORE_ADMIN",
+    "SYS_BOOT: INITIATING STUDENT DETAILS...",
+    "ABINESH RESUME INITIALIZING...",
+    "ACCESS_LEVEL: ADMIN_CORE",
     "MEMRISTOR STACK_0XFF90: INTEGRITY_OK",
-    "ESTABLISHING NEURAL LINK...",
-    "CRITICAL CHECK: CONFIRMING THREE LAWS OF ROBOTICS...",
-    " >> LAW_I: A robot may not injure a human being. [COMPLIANT]",
-    " >> LAW_II: A robot must obey human commands. [COMPLIANT]",
-    " >> LAW_III: A robot must protect its own existence. [COMPLIANT]",
+    "ESTABLISHING SERVER LINK...",
     "ACTIVATING CORE SYSTEMS...",
-    "LOADING AI MODULES...",
-    "NEURAL DENSITY: 1.2 TERABYTES/SEC (LOADED)",
+    "LOADING DETAILS...",
     "INTELLECT_COEF: MULTI-MODAL EMOTIONAL SENSORS STABLE",
-    "CALIBRATING VISION PROTOCOLS: OpenCV/PyTorch CORE ONLINE",
+    "CALIBRATING SKILLS -->TILL NOW ",
     "ABINESH A // AI SYSTEM PROTOCOLS: ENGAGED",
     "SYSTEM SECURITY KEY: APPROVED",
     "SYSTEM ONLINE...",
-    "CHITTI_v2.0_SYS: BOOT SEQUENCE SUCCESSFUL.",
+    "ABINESH_v2.0_SYS: LOADED EVERYTHINF SUCCESSFULLY.",
   ];
 
   const { visibleLines, isComplete } = useTerminalEffect(bootLogs, fastSkip ? 30 : 130);
@@ -175,7 +170,7 @@ export default function BootLoader({ onBootComplete }) {
                     onClick={handleSystemEnter}
                     className="px-5 py-2.5 bg-brand-cyan text-brand-dark font-bold text-[11px] tracking-widest rounded hover:shadow-cyan-glow-lg transition-all duration-300 cursor-pointer text-glow-cyan uppercase"
                   >
-                    EXECUTE SYSTEM LOGIN
+                    VIEW PORTFOLIO
                   </motion.button>
                 )}
               </div>

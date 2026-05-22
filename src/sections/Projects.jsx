@@ -180,7 +180,7 @@ export default function Projects() {
                             : 'border-brand-red/40 hover:border-brand-red text-brand-red bg-brand-red/5 hover:shadow-red-glow'
                         }`}
                       >
-                        <span>DECRYPT_DOSSIER</span>
+                        <span>DESCRIPTION</span>
                         <FiCpu />
                       </button>
                     </div>

@@ -6,16 +6,16 @@ import { FiCheck, FiCpu, FiTrendingUp } from 'react-icons/fi';
 
 const TIMELINE_ENTRIES = [
   {
-    milestone: "Started AIML Engineering",
+    milestone: "Started AIML Engineering at 2023",
     blueDate: "ACADEMIC SYSTEM INIT",
     redDate: "DEPLOYMENT_VECTOR_INIT",
-    desc: "Began foundational coursework in Artificial Intelligence & Machine learning, math modules, and calculus logic.",
+    desc: "Began foundational coursework in Artificial Intelligence & Machine learning.",
     blueStatus: "COMPLETED",
     redStatus: "SECURED",
     color: "primary"
   },
   {
-    milestone: "Learning Python & SQL",
+    milestone: "Started to Learn Python & SQL",
     blueDate: "DATA CORE ACQUISITION",
     redDate: "CORE_ALGO_HARVEST",
     desc: "Acquired database engineering algorithms and scripting methods. Built database architectures and automation scripts.",
