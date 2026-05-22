@@ -10,7 +10,7 @@ export default function BootLoader({ onBootComplete }) {
 
   const bootLogs = [
     "SYS_BOOT: INITIATING STUDENT DETAILS...",
-    "ABINESH RESUME INITIALIZING...",
+    "ABINESH's RESUME INITIALIZING...",
     "ACCESS_LEVEL: ADMIN_CORE",
     "MEMRISTOR STACK_0XFF90: INTEGRITY_OK",
     "ESTABLISHING SERVER LINK...",
@@ -99,7 +99,7 @@ export default function BootLoader({ onBootComplete }) {
             <div className="flex justify-between items-center border-b border-brand-cyan/20 pb-3 text-brand-cyan">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 bg-brand-cyan rounded-full animate-ping" />
-                <span className="font-bold tracking-widest text-[10px] uppercase">ABINESH SYSTEM // CHITTI_CORE_BOOT</span>
+                <span className="font-bold tracking-widest text-[10px] uppercase">ABINESH PORTFOLIO FULL_CORE_BOOT</span>
               </div>
               <span className="text-[10px] opacity-60">MODEL: T-800 // SUB_SYS: ACTIVE</span>
             </div>
